@@ -58,6 +58,28 @@ console.log(calculate(10, 5, multiply));
 console.log(calculate(10, 5, divide));
 console.log(calculate(10, 0, divide));
 
+// Завдання 3: Генератор повідомлень
+// Створіть функцію, яка повторює певну дію задану кількість разів, використовуючи колбек-функцію для генерації повідомлень.
+// Створіть функцію repeatMessage(times, messageCreator)
+// Створіть цикл for від i = 0 до i < times
+// На кожній ітерації викликайте messageCreator(i)
+// Протестуйте з різними колбеками
+function repeatMessage(times, messageCreator) {
+  for (let index = 0; index < times; index++) {
+    messageCreator(index);
+  }
+}
+
+function creativeMessageWithIndex(index) {
+  console.log("Це креативне повідомлення під індексом: " + index);
+}
+
+function levelOrder(index) {
+  console.log("Ваш Level = " + (index + 1));
+}
+
+repeatMessage(3, creativeMessageWithIndex);
+repeatMessage(7, levelOrder);
 // Завдання 4: Кінотеатр (творче та додаткове завдання)
 // Створіть власну функцію обробки списку фільмів, яка може застосовувати різні дії до кожного фільму у колекції.
 // Створіть функцію processMovies(movies, action)
